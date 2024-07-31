@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayushi, will you be my girlfriend?</title>
+    <style>
+        body {
+            background-color: #ffccd5;
+            color: #ff4d6d;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            position: relative;
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .yes {
+            background-color: #ff4d6d;
+            color: #fff;
+        }
+        .no {
+            background-color: #4d4dff;
+            color: #fff;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ayushi, will you be my girlfriend?</h1>
+    <div class="button-container">
+        <button class="yes" onclick="moveButton()">Yes</button>
+        <button class="no" onclick="bounceButton()">No</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            const yesButton = document.querySelector('.yes');
+            const x = Math.floor(Math.random() * (window.innerWidth - yesButton.offsetWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - yesButton.offsetHeight));
+            yesButton.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function bounceButton() {
+            const noButton = document.querySelector('.no');
+            const x = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+            noButton.style.transform = `translate(${x}px, ${y}px)`;
+            noButton.style.transition = 'transform 0.5s ease';
+        }
+    </script>
+</body>
+</html>
